@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Gerenciamento Campanhas Banese</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+     <!-- Navbar -->
+     <nav class="navbar">
+        <div class="logo-placeholder">
+            <img src="logo2.png" alt="Banese Card Logo" width="120">
+        </div>
+        <div class="navbar-menu">
+            <a href="index.html" class="menu-link" id="cadastrar-link">Cadastrar Campanha</a>
+            <a href="Tela.html" class="menu-link" id="gerenciar-link">Gerenciar Campanha</a>
+        <div class="navbar-user">
+            <div class="user-circle" onclick="toggleUserMenu()">
+                <img src="perfil.png" alt="Foto de Perfil" class="user-photo">
+            </div>
+            <div id="user-menu" class="user-menu">
+                <a href="#">Configurações</a>
+                <a href="index.html" class="logout-link">Sair</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Gerenciar Campanhas</h2>
+
+        <!-- Filtros -->
+        <div class="filters">
+            <div>
+                <label for="data">Período:</label>
+                <input type="date" id="data-inicio">  até
+                <input type="date" id="data-fim"> 
+            </div>
+
+            <div>
+                <label for="status">Status:</label>
+                <select id="status">
+                    <option value="ativa">Ativa</option>
+                    <option value="inativa">Inativa</option>
+                    <option value="encerrada">Encerrada</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="tipo-regra">Tipo de Regra:</label>
+                <select id="tipo-regra">
+                    <option value="regra1">Regra 1</option>
+                    <option value="regra2">Regra 2</option>
+                    <option value="regra3">Regra 3</option>
+                </select>
+            </div>
+
+            <!-- Botões Cadastrar e Filtrar -->
+            <button class="register-button" onclick="window.location.href='CadastroCampanha/index.html'">Cadastrar</button>
+            <button class="filter-button">Filtrar</button>
+        </div>
+
+        <!-- Tabela de campanhas -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome da Campanha</th>
+                    <th>Status</th>
+                    <th>Período</th>
+                    <th>Tipo de Regra</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="campanha-list">
+                <!-- As campanhas serão inseridas aqui pelo JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    
+
+    <!-- Referência ao arquivo JavaScript externo -->
+    <script src="tela.js"></script>
+    <!-- Popup para exibir detalhes da campanha -->
+<div id="detalhes-popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="fecharDetalhesPopup()">&times;</span>
+        <h2>Detalhes da Campanha</h2>
+        <div id="detalhes-campanha"></div> <!-- Aqui serão exibidos os detalhes da campanha -->
+    </div>
+</div>
+
+<!-- Footer Simplificado -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Banese Card | Todos os direitos reservados</p>
+        <p>Telefone: (79) 9999-9999 | Email: atendimento@banesecard.com.br</p>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
