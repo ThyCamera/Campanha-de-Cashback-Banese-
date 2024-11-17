@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Nova Campanha</title>
+    <link rel="stylesheet" href="cadastro_campanha.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-placeholder">
+            <img src="logo.png" alt="Banese Card Logo" width="120">
+        </div>
+        <div class="navbar-menu">
+            <a href="index.html" class="menu-link" id="cadastrar-link">Cadastrar Campanha</a>
+            <a href="Tela.html" class="menu-link" id="gerenciar-link">Gerenciar Campanha</a>
+        <div class="navbar-user">
+            <div class="user-circle" onclick="toggleUserMenu()">
+                <img src="perfil.png" alt="Foto de Perfil" class="user-photo">
+            </div>
+            <div id="user-menu" class="user-menu">
+                <a href="#">Configurações</a>
+                <a href="index.html" class="logout-link">Sair</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+            <div class="logo-placeholder">
+    <div class="logo-placeholder"></div>
+</div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Cadastrar Campanha</h2>
+        <form id="cadastro-campanha-form">
+            <div>
+                <label for="nome-campanha">Nome da Campanha:</label>
+                <input type="text" id="nome-campanha" name="nome-campanha" required>
+            </div>
+            <div>
+                <label for="data-inicio">Data Inicial:</label>
+                <input type="date" id="data-inicio" name="data-inicio" required>
+            </div>
+            <div>
+                <label for="data-fim">Data Final:</label>
+                <input type="date" id="data-fim" name="data-fim" required>
+            </div>
+            <div>
+                <label for="tipo-regra">Tipo de Regra:</label>
+                <select id="tipo-regra" name="tipo-regra">
+                    <option value="regra1">Regra 1</option>
+                    <option value="regra2">Regra 2</option>
+                    <option value="regra3">Regra 3</option>
+                </select>
+            </div>
+            <div>
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option value="ativa">Ativa</option>
+                    <option value="inativa">Inativa</option>
+                    <option value="encerrada">Encerrada</option>
+                </select>
+            </div>
+            <button type="button" class="associate-button" onclick="openPopup()">Associar Portadores</button>
+            <button type="button" onclick="salvarCampanha()" class="save-button">Salvar</button>
+        </form>
+    </div>
+
+    <!-- Popup para Associar Portadores -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Associar Portadores</h2>
+
+            <!-- Lista de portadores existentes -->
+            <div class="portadores-list" id="portadores-list"></div>
+
+            <!-- Formulário -->
+            <form id="add-portador-form">
+                <div>
+                    <label for="nome-portador">Nome do Portador:</label>
+                    <input type="text" id="nome-portador" name="nome-portador" required>
+                </div>
+                <div>
+                    <label for="id-portador">ID do Portador:</label>
+                    <input type="text" id="id-portador" name="id-portador" required>
+                </div>
+                <button type="button" onclick="adicionarPortador()" class="save-button">Adicionar Portador</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="cadastro_campanha.js"></script>
+</body>
+</html>
